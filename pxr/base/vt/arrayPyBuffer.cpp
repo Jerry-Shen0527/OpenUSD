@@ -547,7 +547,7 @@ VtArrayFromPyBuffer(TfPyObjWrapper const &obj, std::string *err)
 }
 
 #define INSTANTIATE(unused, elem)                                          \
-template boost::optional<VtArray<VT_TYPE(elem)> >                          \
+template VT_API boost::optional<VtArray<VT_TYPE(elem)> >                          \
 VtArrayFromPyBuffer<VT_TYPE(elem)>(TfPyObjWrapper const &obj, string *err);
 TF_PP_SEQ_FOR_EACH(INSTANTIATE, ~, VT_ARRAY_PYBUFFER_TYPES)
 #undef INSTANTIATE
